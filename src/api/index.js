@@ -6,7 +6,7 @@ const router = express.Router();
 const NosisMockupController = require('../Controllers/NosisMockupController');
 const CrmBancoMockup = require('../Controllers/CrmBancoMockupController');
 //whatsapp
-const WhatsappMockupController = require('../Controllers/whatsappMockupController');
+const WhatsappMockupController = require('../Controllers/WhatsappMockupController');
 const middlewares = require('../middlewares');
 
 
