@@ -6,7 +6,7 @@ exports.nodes = async(req,res,next) => {
         const nodo = req.body.nodo;
         const tipo = req.body.tipo;
         // Realizar alguna lógica de negocio o manipulación de datos si es necesario
-        const respuesta = `Variable recibida: ${nodo,tipo}`;
+       
         var response = "";
         // Enviar una respuesta JSON
 
