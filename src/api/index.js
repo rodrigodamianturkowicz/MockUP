@@ -6,7 +6,7 @@ const router = express.Router();
 const NosisMockupController = require('../Controllers/NosisMockupController');
 const CrmBancoMockup = require('../Controllers/CrmBancoMockupController');
 //whatsapp
-const WhatsappMockupController = require('../Controllers/WhatsappMockupController');
+const WhatsappMockupController = require('../Controllers/whatsappMockupController');
 const middlewares = require('../middlewares');
 
 
@@ -35,6 +35,8 @@ router.post('/whatsapp-mockup', WhatsappMockupController.aliveWhatsapp);
 router.post('/guiasdeasesoramiento', WhatsappMockupController.guiasDeAsesoramiento);
 router.post('/productos', WhatsappMockupController.Productos);
 router.post('/opciones', WhatsappMockupController.opciones);
+//ruta nueva donde un solo endpoint debe hacer todo mockupGuias
+router.post('/nodes', WhatsappMockupController.nodes);
 
 router.use('/emojis', emojis);
 
