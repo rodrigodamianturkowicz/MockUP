@@ -1,26 +1,26 @@
 
 exports.nodes = async(req,res,next) => {
     try {
-        let nodo, tipo;
+        let nodo, formato;
 
     // Verificar si los parámetros están en el cuerpo de la solicitud (POST)
     if (req.method === 'POST' && req.body) {
       nodo = req.body.nodo;
-      tipo = req.body.tipo;
+      formato = req.body.formato;
     }
     
     // Verificar si los parámetros están en la cadena de consulta (GET)
     if (req.method === 'GET' && req.query) {
       nodo = req.query.nodo;
-      tipo = req.query.tipo;
+      formato = req.query.formato;
     }
 
         // Realizar alguna lógica de negocio o manipulación de datos si es necesario
-        const respuesta = `Variable recibida: ${nodo,tipo}`;
+        const respuesta = `Variable recibida: ${nodo,formato}`;
         var response = "";
         // Enviar una respuesta JSON
 
-        if (nodo==0 && tipo !=""){
+        if (nodo==0 && formato !=""){
         response={ 
             data: {
                 "nodo": 0,
@@ -50,7 +50,7 @@ exports.nodes = async(req,res,next) => {
             };
         }
 
-        if(nodo==1 || nodo==2 || nodo==3 || nodo==4 && tipo!=""){
+        if(nodo==1 || nodo==2 || nodo==3 || nodo==4 && formato!=""){
             response={
                  data : {
                     "nodo": 1,
@@ -80,7 +80,7 @@ exports.nodes = async(req,res,next) => {
             }
         }
 
-        if(nodo==5 || nodo==6 || nodo==7 || nodo==8 && tipo!=""){
+        if(nodo==5 || nodo==6 || nodo==7 || nodo==8 && formato!=""){
             response={
                 data:{
                     "nodo": 5,
@@ -113,7 +113,7 @@ exports.nodes = async(req,res,next) => {
 
         }
 
-        if((nodo==9 || nodo==10 || nodo==11 || nodo==12) && tipo=="BASE64"){
+        if((nodo==9 || nodo==10 || nodo==11 || nodo==12) && formato=="BASE64"){
             response={
                 data:{
                         "nodo":9, 
