@@ -1,12 +1,22 @@
 
 exports.nodes = async(req,res,next) => {
     try {
-        // Obtener la variable del cuerpo de la solicitud
-        //const miVariable = req.body.miVariable;
-        const nodo = req.body.nodo;
-        const tipo = req.body.tipo;
+        let nodo, tipo;
+
+    // Verificar si los parámetros están en el cuerpo de la solicitud (POST)
+    if (req.method === 'POST' && req.body) {
+      nodo = req.body.nodo;
+      tipo = req.body.tipo;
+    }
+    
+    // Verificar si los parámetros están en la cadena de consulta (GET)
+    if (req.method === 'GET' && req.query) {
+      nodo = req.query.nodo;
+      tipo = req.query.tipo;
+    }
+
         // Realizar alguna lógica de negocio o manipulación de datos si es necesario
-       
+        const respuesta = `Variable recibida: ${nodo,tipo}`;
         var response = "";
         // Enviar una respuesta JSON
 
