@@ -10,9 +10,9 @@ exports.nodes = async(req,res,next) => {
     }
     
     // Verificar si los parámetros están en la cadena de consulta (GET)
-    if (req.method === 'GET' && req.query) {
-      nodo = req.query.nodo;
-      formato = req.query.formato;
+    if (req.method === 'GET' && req.body) {
+      nodo = req.body.nodo;
+      formato = req.body.formato;
     }
 
         // Realizar alguna lógica de negocio o manipulación de datos si es necesario
