@@ -2,7 +2,8 @@
 exports.nodes = async(req,res,next) => {
     try {
         let nodo, formato;
-
+    
+    //01/16/24 21:05    
     // Verificar si los parámetros están en el cuerpo de la solicitud (POST)
     if (req.method === 'POST' && req.body) {
       nodo = req.body.nodo;
@@ -10,13 +11,36 @@ exports.nodes = async(req,res,next) => {
     }
     
     // Verificar si los parámetros están en la cadena de consulta (GET)
-    if (req.method === 'GET' && req.body) {
-      nodo = req.body.nodo;
-      formato = req.body.formato;
+    if (req.method === 'GET' && req.query) {
+      nodo = req.query.nodo;
+      formato = req.query.formato;
     }
 
+    //01/16/24 21:18
+        // Verificar si los parámetros están en el cuerpo de la solicitud (POST o GET)
+        // if (req.method === 'POST' && req.body) {
+        //     nodo = req.body.nodo;
+        //     formato = req.body.formato;
+        // } else if (req.method === 'GET' && (req.body || req.query)) {
+        //     nodo = req.body ? req.body.nodo : req.query.nodo;
+        //     formato = req.body ? req.body.formato : req.query.formato;
+        // }
+
+        //01/16/24 21:21 RECIBE BIEN POR URL. NO POR BODY
+        // if (req.method === 'GET') {
+        //     if (req.query) {
+        //         // Si hay parámetros en la URL (req.query)
+        //         nodo = req.query.nodo;
+        //         formato = req.query.formato;
+        //     } else if (req.body) {
+        //         // Si no hay parámetros en la URL, pero sí en el cuerpo (por alguna razón)
+        //         nodo = req.body.nodo;
+        //         formato = req.body.formato;
+        //     }
+        // }
+
         // Realizar alguna lógica de negocio o manipulación de datos si es necesario
-        const respuesta = `Variable recibida: ${nodo,formato}`;
+        const respuesta = `Variable recibida: ${nodo}, ${formato}`;
         var response = "";
         // Enviar una respuesta JSON
 
