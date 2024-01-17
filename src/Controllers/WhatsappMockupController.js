@@ -3,48 +3,25 @@ exports.nodes = async(req,res,next) => {
     try {
         let nodo, formato;
     
-    //01/16/24 21:05    
-    // Verificar si los parámetros están en el cuerpo de la solicitud (POST)
-    if (req.method === 'POST' && req.body) {
+     //01/16/24 21:05    
+     // Verificar si los parámetros están en el cuerpo de la solicitud (POST)
+     if (req.method === 'POST' && req.body) {
       nodo = req.body.nodo;
       formato = req.body.formato;
-    }
+      formato=formato.toUpperCase();
+      
+     }
     
-    // Verificar si los parámetros están en la cadena de consulta (GET)
-    if (req.method === 'GET' && req.query) {
+     // Verificar si los parámetros están en la cadena de consulta (GET)
+     if (req.method === 'GET' && req.query) {
       nodo = req.query.nodo;
       formato = req.query.formato;
-    }
-
-    //01/16/24 21:18
-        // Verificar si los parámetros están en el cuerpo de la solicitud (POST o GET)
-        // if (req.method === 'POST' && req.body) {
-        //     nodo = req.body.nodo;
-        //     formato = req.body.formato;
-        // } else if (req.method === 'GET' && (req.body || req.query)) {
-        //     nodo = req.body ? req.body.nodo : req.query.nodo;
-        //     formato = req.body ? req.body.formato : req.query.formato;
-        // }
-
-        //01/16/24 21:21 RECIBE BIEN POR URL. NO POR BODY
-        // if (req.method === 'GET') {
-        //     if (req.query) {
-        //         // Si hay parámetros en la URL (req.query)
-        //         nodo = req.query.nodo;
-        //         formato = req.query.formato;
-        //     } else if (req.body) {
-        //         // Si no hay parámetros en la URL, pero sí en el cuerpo (por alguna razón)
-        //         nodo = req.body.nodo;
-        //         formato = req.body.formato;
-        //     }
-        // }
-
-        // Realizar alguna lógica de negocio o manipulación de datos si es necesario
-        const respuesta = `Variable recibida: ${nodo}, ${formato}`;
+      formato=formato.toUpperCase();
+     }
         var response = "";
         // Enviar una respuesta JSON
 
-        if (nodo==0 && formato !=""){
+        if (nodo==0 && formato =="WA"){
         response={ 
             data: {
                 "nodo": 0,
@@ -74,7 +51,7 @@ exports.nodes = async(req,res,next) => {
             };
         }
 
-        if(nodo==1 || nodo==2 || nodo==3 || nodo==4 && formato!=""){
+        if((nodo==1 || nodo==2 || nodo==3 || nodo==4) && formato =="WA"){
             response={
                  data : {
                     "nodo": 1,
@@ -104,7 +81,7 @@ exports.nodes = async(req,res,next) => {
             }
         }
 
-        if(nodo==5 || nodo==6 || nodo==7 || nodo==8 && formato!=""){
+        if((nodo==5 || nodo==6 || nodo==7 || nodo==8) && formato=="WA"){
             response={
                 data:{
                     "nodo": 5,
