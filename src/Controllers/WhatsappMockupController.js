@@ -86,7 +86,7 @@ exports.nodes = async(req,res,next) => {
                 data:{
                     "nodo": 5,
                     "tipo":"carpeta", 
-                    "textoAdicional": "*Conoce la version ideal para vos* \\n \\n *Impulso:*$70.0000 \\n *Crecimiento:*$180.0000 \\n *Evolución:*$330.0000 \\n *Logros:*$500.0000 \\n \\n  *Ingreso mínimo mensual*",
+                    "textoAdicional": "*Conoce la version ideal para vos* %0A %0A *Impulso:*$70.0000 %0A *Crecimiento:*$180.0000 %0A *Evolución:*$330.0000 %0A *Logros:*$500.0000 %0A %0A  *Ingreso mínimo mensual*",
 
                     "subNodo1": {
                         "nodo":9, 
