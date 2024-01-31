@@ -38,6 +38,9 @@ router.post('/opciones', WhatsappMockupController.opciones);
 //ruta nueva donde un solo endpoint debe hacer todo mockupGuias
 router.post('/nodes', WhatsappMockupController.nodes);
 router.get('/nodes', WhatsappMockupController.nodes);
+// router.post('/login', WhatsappMockupController.login);
+// router.post('/plataformaS1', WhatsappMockupController.plataformaS1);
+
 
 router.use('/emojis', emojis);
 
