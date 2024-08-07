@@ -33,7 +33,8 @@ exports.getMunicipio = (req, res) => {
                                   "Opcion1": {
                                     "LicenciaParticular": {
                                       "Boton1": "Licencia Particular",
-                                      "Link": "https://berazategui.gob.ar/#"
+                                      //"Link": "https://berazategui.gob.ar/#"
+                                      "Link": "<a href=\"https://berazategui.gob.ar/#\">https://berazategui.gob.ar/#</a>"
                                     }
                                   },
                                   "Opcion2": {
