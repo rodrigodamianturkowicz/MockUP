@@ -8,6 +8,8 @@ const CrmBancoMockup = require('../Controllers/CrmBancoMockupController');
 //whatsapp
 const WhatsappMockupController = require('../Controllers/WhatsappMockupController');
 const MunicipioController = require('../Controllers/MunicipioController'); // Importa el objeto con las funciones
+//municipio iterador
+const MunicipioIteradoController = require('../Controllers/MunicipioIteradoController');
 const middlewares = require('../middlewares');
 //const axios = require('axios');//requerido para enviar parametros al ws s1
 
@@ -44,6 +46,8 @@ router.get('/nodes', WhatsappMockupController.nodes);
 
 //Nueva ruta para MunicipioController
 router.get('/municipio', MunicipioController.getMunicipio);
+//nueva ruta para MunicipioIteradoController
+router.get('/municipios', MunicipioIteradoController.obtenerMunicipio);
 
 router.use('/emojis', emojis);
 
